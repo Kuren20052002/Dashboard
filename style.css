@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Bornia;
+  src: url(./Font/Bornia-Regular.ttf);
+}
+
+:root {
+ --brown: #2a3326;
+ --lightbrown: #7ca081;
+ --gray: #5d696f;
+ --lightgray: #9bc8b8;
+ --beige: #caeecf;
+}
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -20,6 +32,7 @@
 html, body {
   margin: 0;
   height: 100%;
+  font-family: 'Bornia', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -77,6 +90,9 @@ body {
   grid-template-rows: 60px 430px 230px;
   min-height: 1000px;
   min-width: 200px;
+  padding-left: 10px;
+  background-color: var(--brown);
+  color: var(--beige);
 }
 
 .primary-nav, .support-nav {
@@ -93,8 +109,16 @@ body {
   min-width: 850px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  gap: 5px;
+}
 .logo-name {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 .option-name {
@@ -171,6 +195,7 @@ body {
 .cards-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 10px;
   gap: 25px;
 }
 
@@ -239,4 +264,8 @@ body {
 
 .announcements-container > *:not(:last-child) > .a-desc  {
   padding-bottom: 20px;
+}
+
+.sidebar img {
+  filter: invert(98%) sepia(25%) saturate(755%) hue-rotate(54deg) brightness(101%) contrast(87%);
 }
