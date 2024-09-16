@@ -6,8 +6,8 @@
 :root {
  --brown: #2a3326;
  --lightbrown: #7ca081;
- --gray: #383b39;
- --lightgray: #9bc8b8;
+ --gray: #595c5a;
+ --skin: #ffd4ae;
  --beige: #caeecf;
 }`
 /*
@@ -86,7 +86,7 @@ body {
   grid-template-rows: 1fr 2fr;
   min-width: 600px;
   background-color: var(--beige);
-  box-shadow: 3px 3px 10px brown;
+  box-shadow: 3px 3px 10px black;
 }
 
 .sidebar {
@@ -112,6 +112,9 @@ body {
   padding: 18px 20px 70px 20px;
   gap: 20px;
   min-width: 850px;
+  background-color: var(--skin);
+  color: var(--brown);
+  z-index: -2;
 }
 
 .logo {
@@ -132,7 +135,7 @@ body {
 }
 
 .header p {
-  color: var(--gray);
+  color: var(--brown);
 }
 
 .search-container {
@@ -256,17 +259,22 @@ input, input:active, input:focus {
 
 .cards-container{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   padding-top: 10px;
   gap: 25px;
 }
 
 .card{
+  box-sizing: border-box;
   height: 100%;
   max-height: 300px;
   display: grid;
   grid-template-rows: 40px 5fr 1fr;
   font-size: rem;
+  background-color: white;
+  border-radius: 15px;
+  border-left: 15px solid var(--gray);
+  padding: 20px 10px 10px 10px;
 }
 
 .card-actions {
@@ -277,6 +285,7 @@ input, input:active, input:focus {
 }
 .big-title{
   font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .trend-img, .profile-img, .intro-img {
@@ -294,10 +303,10 @@ input, input:active, input:focus {
 
 .trends-container {
   flex: 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
   padding-top: 12px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .trend {
@@ -315,17 +324,19 @@ input, input:active, input:focus {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  background-color: white;
+  border-radius: 25px;
 }
 
 .announcement {
-  padding: 0px 20px 0px 20px;
+  padding: 8px 20px 8px 20px;
 }
 
-.announcements-container > *:not(:last-child) > .a-desc  {
-  padding-bottom: 20px;
+hr {
+  color: var(--lightbrown);
+  width: calc(100% - 40px);
 }
 
 .sidebar img {
@@ -334,4 +345,29 @@ input, input:active, input:focus {
 
 .notification-icon {
   filter: invert(40%) sepia(5%) saturate(1061%) hue-rotate(155deg) brightness(96%) contrast(85%);
+}
+
+.user-tag, .a-title, .card-title {
+  font-weight: 600;
+}
+
+.announcement p {
+  font-size: 1.2rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.card-desc {
+  font-size: 1.26rem;
+  color: var(--gray);
+}
+
+.user-tag {
+  font-size: 1.2rem;
+}
+
+.trend-desc {
+  font-size: 1.1rem;
 }
